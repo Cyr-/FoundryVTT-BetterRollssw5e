@@ -59,8 +59,6 @@ CONFIG.betterRollssw5e = {
 		],
 	allFlags: {
 		weaponFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", get value() { return getQuickDescriptionDefault() }, get altValue() { return getQuickDescriptionDefault() } },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -74,8 +72,6 @@ CONFIG.betterRollssw5e = {
 			quickPrompt: { type: "Boolean", value: false, altValue: false },
 		},
 		equipmentFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -87,8 +83,6 @@ CONFIG.betterRollssw5e = {
 			quickPrompt: { type: "Boolean", value: false, altValue: false },
 		},
 		consumableFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -102,7 +96,6 @@ CONFIG.betterRollssw5e = {
 			quickPrompt: { type: "Boolean", value: false, altValue: false },
 		},
 		toolFlags: {
-			critRange: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", get value() { return getQuickDescriptionDefault() }, get altValue() { return getQuickDescriptionDefault() } },
 			quickCheck: { type: "Boolean", value: true, altValue: true },
 			quickProperties: { type: "Boolean", value: true, altValue: true },
@@ -111,8 +104,6 @@ CONFIG.betterRollssw5e = {
 		},
 
 		powerFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -127,8 +118,6 @@ CONFIG.betterRollssw5e = {
 		},
 
 		classfeatureFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -141,10 +130,7 @@ CONFIG.betterRollssw5e = {
 			quickFlavor: { type: "Boolean", value: true, altValue: true },
 			quickPrompt: { type: "Boolean", value: false, altValue: false },
 		},
-
 		featFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -159,8 +145,6 @@ CONFIG.betterRollssw5e = {
 		},
 
 		deploymentFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -174,8 +158,6 @@ CONFIG.betterRollssw5e = {
 			quickPrompt: { type: "Boolean", value: false, altValue: false },
 		},
 		deploymentfeatureFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -189,8 +171,6 @@ CONFIG.betterRollssw5e = {
 			quickPrompt: { type: "Boolean", value: false, altValue: false },
 		},
 		ventureFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -205,8 +185,6 @@ CONFIG.betterRollssw5e = {
 		},
 
 		fightingstyleFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -219,8 +197,6 @@ CONFIG.betterRollssw5e = {
 			quickPrompt: { type: "Boolean", value: false, altValue: false },
 		},
 		fightingmasteryFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -233,8 +209,6 @@ CONFIG.betterRollssw5e = {
 			quickPrompt: { type: "Boolean", value: false, altValue: false },
 		},
 		lightsaberformFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -248,8 +222,6 @@ CONFIG.betterRollssw5e = {
 		},
 
 		starshipFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -263,8 +235,6 @@ CONFIG.betterRollssw5e = {
 			quickPrompt: { type: "Boolean", value: false, altValue: false },
 		},
 		starshipfeatureFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -278,8 +248,6 @@ CONFIG.betterRollssw5e = {
 			quickPrompt: { type: "Boolean", value: false, altValue: false },
 		},
 		starshipmodFlags: {
-			critRange: { type: "String", value: "" },
-			critDamage: { type: "String", value: "" },
 			quickDesc: { type: "Boolean", value: true, altValue: true },
 			quickAttack: { type: "Boolean", value: true, altValue: true },
 			quickSave: { type: "Boolean", value: true, altValue: true },
@@ -342,10 +310,6 @@ async function addButtonsToItemLi(li, actor, buttonContainer) {
 	}
 
 	const item = actor.items.get(itemId);
-	if (!item) {
-		return;
-	}
-
 	const itemData = item.data.data;
 	const flags = item.data.flags.betterRollssw5e;
 
@@ -529,105 +493,6 @@ async function addButtonsToItemLi(li, actor, buttonContainer) {
 	});
 }
 
-/**
- * Replaces the sheet's d20 rolls for ability checks, skill checks, and saving throws into dual d20s.
- * Also replaces the default button on items with a "standard" roll.
- */
-export function changeRollsToDual (actor, html, data, params) {
-	if (actor && actor.permission < 3) { return; }
-
-	let paramRequests = mergeObject({
-			abilityButton: '.ability-name',
-			checkButton: '.ability-mod',
-			saveButton: '.ability-save',
-			skillButton: '.skill-name',
-			itemButton: '.item:not(.enhanced-item) .item-image',
-			singleAbilityButton: true
-		},params || {});
-
-	function getAbility(target) {
-		let ability = null;
-		for (let i=0; i <= 3; i++) {
-			ability = target.getAttribute("data-ability");
-			if (ability) { break; }
-			else {
-				target = target.parentElement;
-			}
-		}
-		return ability;
-	}
-
-	// Assign new action to ability check button
-	let abilityName = html.find(paramRequests.abilityButton);
-	if (abilityName.length > 0 && paramRequests.singleAbilityButton === true) {
-		abilityName.off();
-		abilityName.click(event => {
-			event.preventDefault();
-			const ability = getAbility(event.currentTarget);
-			if (event.ctrlKey || event.metaKey) {
-				CustomRoll.rollAttribute(actor, ability, "check");
-			} else if (event.shiftKey) {
-				CustomRoll.rollAttribute(actor, ability, "save");
-			} else {
-				new Dialog({
-					title: `${i18n(sw5e.abilities[ability])} ${i18n("Ability Roll")}`,
-					content: `<p><span style="font-weight: bold;">${i18n(sw5e.abilities[ability])}:</span> ${i18n("What type of roll?")}</p>`,
-					buttons: {
-						test: {
-							label: i18n("Ability Check"),
-							callback: async () => { CustomRoll.rollAttribute(actor, ability, "check"); }
-						},
-						save: {
-							label: i18n("Saving Throw"),
-							callback: async () => { CustomRoll.rollAttribute(actor, ability, "save"); }
-						}
-					}
-				}).render(true);
-			}
-		});
-	}
-
-	// Assign new action to ability button
-	let checkName = html.find(paramRequests.checkButton);
-	if (checkName.length > 0) {
-		checkName.off();
-		checkName.addClass("rollable");
-		checkName.click(async event => {
-			event.preventDefault();
-			let ability = getAbility(event.currentTarget),
-				abl = actor.data.data.abilities[ability],
-				params = Utils.eventToAdvantage(event);
-			CustomRoll.rollAttribute(actor, ability, "check", params);
-		});
-	}
-
-	// Assign new action to save button
-	let saveName = html.find(paramRequests.saveButton);
-	if (saveName.length > 0) {
-		saveName.off();
-		saveName.addClass("rollable");
-		saveName.click(async event => {
-			event.preventDefault();
-			let ability = getAbility(event.currentTarget),
-				abl = actor.data.data.abilities[ability],
-				params = Utils.eventToAdvantage(event);
-			CustomRoll.rollAttribute(actor, ability, "save", params);
-		});
-	}
-
-	// Assign new action to skill button
-	let skillName = html.find(paramRequests.skillButton);
-	if (skillName.length > 0) {
-		skillName.off();
-		skillName.click(async event => {
-			event.preventDefault();
-			let params = Utils.eventToAdvantage(event);
-			let skill = event.currentTarget.parentElement.getAttribute("data-skill");
-			CustomRoll.rollSkill(actor, skill, params);
-		});
-	}
-}
-
 /** Frontend for macros */
 export function BetterRolls() {
 	async function assignMacro(item, slot, mode) {
@@ -640,7 +505,7 @@ const itemId = "${item.data._id}";
 const actorToRoll = canvas.tokens.placeables.find(t => t.actor?.id === actorId)?.actor ?? game.actors.get(actorId);
 const itemToRoll = actorToRoll?.items.get(itemId);
 
-if (game.modules.get('itemacro')?.active && itemToRoll.hasMacro()) {
+if (game.modules.get('itemacro')?.active && itemToRoll?.hasMacro() && game.settings.get('itemacro', 'defaultmacro')) {
 	return itemToRoll.executeMacro();
 }
 

@@ -4,6 +4,11 @@ A Foundry VTT module that replaces the built in rolling system for sw5e. It allo
 
 If you are feeling generous, and would like to support RedReign's work, you can do so through this [Paypal](https://www.paypal.me/RedReignDonate) link. Thank you!
 
+
+## Incompatible Modules
+- Mars (replaces the core roller, competing directly with Better Rolls. Its one or the other)
+- Better NPC Sheet 5e (very out of date)
+
 #### Partially Compatible (Special Notes)
 - Midi QOL: more or less works, but make sure to enable fast forward attack in the midi options. If auto hit detection is enabled in midi, you'll need to use the query roll mode in Better Rolls to have more accurate results (dual mode / triple mode will throw it off as midi does not detect edits in better rolls).
 - J2BA Animations: Only for attack rolls. If set to play on damage rolls it won't work.
@@ -68,6 +73,14 @@ Extended support for thrown items, consumables, ammunition, and items with other
 - Check out the samples folder for some example macros.
 
 ![](https://i.imgur.com/fMMWz3m.gif)
+
+## Planned Features
+- Additional macro support
+- Extended prompts to configure messages on a roll-by-roll basis
+- Additional hooks support and chat message flags for module cross-compatibility
+
+## Known Issues
+- In versions prior to 1.1.12, there exists a bug where, if used alongside tidy5e, Actor data may increase exponentially. This has since been addressed in 1.1.12. **If you are using Foundry Virtual Tabletop 0.7.0 or higher, please update to Better Rolls 1.1.12.**
 
 ## Acknowledgements
 - Big thanks to Atropos for making a wonderful VTT that's worth making modules for!

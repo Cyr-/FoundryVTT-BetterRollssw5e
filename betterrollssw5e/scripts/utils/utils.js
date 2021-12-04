@@ -312,8 +312,7 @@ export class ActorUtils {
 	 * @param {*} actor
 	 */
 	static getMeleeExtraCritDice(actor) {
-		return 0;
-		// return actor?.getFlag("sw5e", "meleeCriticalDamageDice") ?? 0;
+		return actor?.getFlag("sw5e", "meleeCriticalDamageDice") ?? 0;
 	}
 
 	/**
@@ -420,9 +419,8 @@ export class ItemUtils {
 	static getCritThreshold(item) {
 		if (!item) return null;
 
-		// Get item crit. If its a weapon or power, it might have a SW5E flag to change the range
-		// We take the smallest item crit value
-		let itemCrit = Number(getProperty(item, "data.flags.betterRollssw5e.critRange.value")) || 20;
+		// Get item crit, favoring the smaller between it and the actor's crit threshold
+		let itemCrit = item.data.data.critical?.threshold || 20;
 		const characterCrit = ActorUtils.getCritThreshold(item.actor, item.data.type);
 		return Math.min(20, characterCrit, itemCrit);
 	}
@@ -468,19 +466,13 @@ export class ItemUtils {
 
 	/**
 	 * Ensures that better rolls flag data is set on the item if applicable.
-	 * Performs an item update if anything was set and commit is true
-	 * @param {Item} itemData item to update
-	 * @param {boolean} commit whether to update at the end or not
+	 * Does not perform an item update, only assigns to data
+	 * @param {Item} item item to update flags for
 	 */
-	static async ensureFlags(item, { commit=true } = {}) {
+	static ensureFlags(item) {
 		const flags = this.createFlags(item?.data);
 		if (!flags) return;
 		item.data.flags.betterRollssw5e = flags;
-
-		// Save the updates. Foundry checks for diffs to avoid unnecessary updates
-		if (commit) {
-			await item.data.update({ "flags.betterRollssw5e": flags }, { diff: true });
-		}
 	}
 
 	/**
@@ -636,7 +628,7 @@ export class ItemUtils {
 		}
 
 		// If critBehavior = 3, maximize base and maximize crit dice
-		// Need to get the difference because we're not able to change the base roll from here so we add it to the critical roll 
+		// Need to get the difference because we're not able to change the base roll from here so we add it to the critical roll
 		else if (critBehavior === "3") {
 			let maxDifference = new Roll(baseFormula).evaluate({maximize:true}).total - baseTotal;
 			let newFormula = critRoll.formula + "+" + maxDifference.toString();

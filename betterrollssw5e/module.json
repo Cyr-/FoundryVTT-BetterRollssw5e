@@ -5,7 +5,7 @@
   "author": "Ikaguia#2965",
   "url": "https://github.com/Ikaguia/FoundryVTT-BetterRollssw5e/tree/master/betterrollssw5e",
   "flags": {},
-  "version": "1.6.11.1",
+  "version": "1.6.16.0",
   "minimumCoreVersion": "0.8.6",
   "compatibleCoreVersion": "0.8.9",
   "scripts": [
@@ -68,5 +68,7 @@
   "manifest": "https://raw.githubusercontent.com/Ikaguia/FoundryVTT-BetterRollssw5e/master/betterrollssw5e/module.json",
   "download": "https://github.com/Ikaguia/FoundryVTT-BetterRollssw5e/releases/download/v1.6.11.1/module.zip",
   "protected": false,
-  "coreTranslation": false
+  "coreTranslation": false,
+  "minimumSystemVersion": "1.5.2",
+  "library": false
 }

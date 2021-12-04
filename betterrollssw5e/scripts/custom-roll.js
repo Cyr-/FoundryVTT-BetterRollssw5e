@@ -217,6 +217,7 @@ export class CustomItemRoll {
 	}
 
 	set item(item) {
+		ItemUtils.ensureFlags(item);
 		this._item = item;
 		this.itemId = item.id;
 		this.actor = item?.actor;
@@ -611,8 +612,6 @@ export class CustomItemRoll {
 
 		// Pre-update item configurations which updates the params
 		if (item) {
-			await ItemUtils.ensureFlags(item, { commit: true });
-
 			// Set up preset but only if there aren't fields
 			if (!this.fields || this.fields.length === 0) {
 				this.params.preset = this.params.preset ?? 0;
@@ -641,7 +640,7 @@ export class CustomItemRoll {
 		// Update item casted level property to match the slot level
 		// This ensure things like the property list showing the correct power level
 		if (item && this.params.slotLevel) {
-			item.data.update({ 'data.castedLevel': this.params.slotLevel });
+			item.data.data.castedLevel = this.params.slotLevel;
 		}
 
 		// Show Advantage/Normal/Disadvantage dialog if enabled
@@ -1105,9 +1104,7 @@ export class CustomItemRoll {
 			}
 			if (flagIsTrue("quickTemplate")) { useTemplate = true; }
 
-			if (quickDamage.length > 0 && brFlags.critDamage?.value) {
-				fields.push(["crit"]);
-			}
+			fields.push(["crit"]);
 		} else {
 			//console.log("Request made to Quick Roll item without flags!");
 			fields.push(["desc"]);
@@ -1169,7 +1166,9 @@ export class CustomItemRoll {
 		}
 
 		// If consume is enabled, mark which slot is getting consumed
-		if (consume) consume = powerLevel;
+		if (consume) {
+			consume = powerLevel;
+		}
 
 		// Update params temporarily
 		this.params.slotLevel = powerLevel;
@@ -1208,7 +1207,6 @@ export class CustomItemRoll {
 		const itemData = item.data.data;
 		const hasUses = !!(Number(itemData.uses?.value) || itemData.uses?.per); // Actual check to see if uses exist on the item, even if params.useCharge.use == true
 		const hasResource = !!(itemData.consume?.target); // Actual check to see if a resource is entered on the item, even if params.useCharge.resource == true
-		const hasRecharge = !!(itemData.recharge?.value);
 
 		const request = this.params.useCharge; // Has bools for quantity, use, resource, and charge
 		const recharge = itemData.recharge || {};
@@ -1222,7 +1220,7 @@ export class CustomItemRoll {
 		const consumeResource = hasResource && request.resource && itemData.consume.type !== "ammo";
 		const consumeUsage = request.use && hasUses;
 		const consumeQuantity = request.quantity || autoDestroy;
-		const consumeCharge = request.charge && hasRecharge;
+		const consumeCharge = request.charge && recharge.value;
 
 		// Check for consuming quantity, but not uses
 		if (request.quantity && !consumeUsage) {
@@ -1237,8 +1235,8 @@ export class CustomItemRoll {
 
 		// Consume resources and power points
 		if (consumeResource || consumePowerLevel) {
-			const FALSE = false;
-			const updates = item._getUsageUpdates({ FALSE, FALSE, consumeResource, consumePowerLevel });
+
+			const updates = item._getUsageUpdates({ consumeResource, consumePowerLevel });
 			if (!updates) return "error";
 			mergeUpdates(updates);
 		}
@@ -1261,7 +1259,7 @@ export class CustomItemRoll {
 		}
 
 		// Handle charge ("Action Recharge")
-		if (consumeCharge) {
+		if (request.charge) {
 			itemUpdates["data.recharge.charged"] = false;
 		}
 
